@@ -2,13 +2,13 @@ resource "aws_security_group" "jenkins_sg" {
  name = "jenkins-sg-2"
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_custom_tcp" {
-  security_group_id = aws_security_group.jenkins_sg.id
-  cidr_ipv4 = "0.0.0.0/0"
-  from_port = 8080
-  ip_protocol = "tcp"
-  to_port = 8080
-}
+# resource "aws_vpc_security_group_ingress_rule" "allow_custom_tcp" {
+#   security_group_id = aws_security_group.jenkins_sg.id
+#   cidr_ipv4 = "0.0.0.0/0"
+#   from_port = 8080
+#   ip_protocol = "tcp"
+#   to_port = 8080
+# }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_http" {
   security_group_id = aws_security_group.jenkins_sg.id
